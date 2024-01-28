@@ -23,7 +23,7 @@ K = length(z);
 % initialization
 x1 = zeros(K+1,1); % stored chemical energy, kWh
 x1(1) = x0; % initial state
-pChem1 = -pChemDrive; % chemical charging power, kW
+pChem1 = -pChemDrive; % chemical charging power, kW (initialized with power used for driving)
 
 % simulation
 for k=1:K
