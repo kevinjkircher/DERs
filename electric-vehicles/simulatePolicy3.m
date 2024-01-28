@@ -26,10 +26,10 @@ function [x3,p3] = simulatePolicy3(x0,z,pChemDrive,a,tau,etac,etad,pcMax,xMax,xM
 K = length(z); % number of time steps
 dt = t(2) - t(1); % time step duration, h
 
-% data storage
+% initialization
 x3 = zeros(K+1,1); % stored chemical energy, kWh
 x3(1) = x0; % initial state
-pChem3 = -pChemDrive; % chemical charging power, kW
+pChem3 = -pChemDrive; % chemical charging power, kW (initialized with power used for driving)
 y3 = zeros(K,1); % indicator of charging mode
 
 % simulation
