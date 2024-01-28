@@ -58,6 +58,7 @@ for k=1:K
     x3(k+1) = a*x3(k) + (1-a)*tau*pChem3(k);
 end
 p3 = max(pChem3/etac,etad*pChem3); % charging electrical power, kW
+p3(z==0) = 0; % no electrical charging or discharging while unplugged
 
 end
 
