@@ -36,6 +36,7 @@ for k=1:K
     x1(k+1) = a*x1(k) + (1-a)*tau*pChem1(k);
 end
 p1 = max(pChem1/etac,etad*pChem1); % charging electrical power, kW
+p1(z==0) = 0; % no electrical charging or discharging while unplugged
 
 end
 
