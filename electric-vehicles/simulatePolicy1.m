@@ -17,8 +17,8 @@ function [x1,p1] = simulatePolicy1(x0,z,pChemDrive,a,tau,etac,etad,pcMax,xMax)
 %   x1, a K+1 x 1 vector of stored chemical energies, kWh
 %   p1, a K x 1 vector of electrical charging powers, kW
 
-% dimensions
-K = length(z);
+% timing
+K = length(z); % number of time steps
 
 % initialization
 x1 = zeros(K+1,1); % stored chemical energy, kWh
