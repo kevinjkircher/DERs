@@ -18,13 +18,13 @@ function [x2,p2] = simulatePolicy2(x0,z,pChemDrive,a,tau,etac,etad,pcMax,xMax,xM
 %   x2, a K+1 x 1 vector of stored chemical energies, kWh
 %   p2, a K x 1 vector of electrical charging powers, kW
 
-% dimensions
-K = length(z);
+% timing
+K = length(z); % number of time steps
 
 % initialization
 x2 = zeros(K+1,1); % stored chemical energy, kWh
 x2(1) = x0; % initial state
-pChem2 = -pChemDrive; % chemical charging power, kW
+pChem2 = -pChemDrive; % chemical charging power, kW (initialized with power used for driving)
 y2 = zeros(K,1); % indicator of charging mode
 
 % simulation
