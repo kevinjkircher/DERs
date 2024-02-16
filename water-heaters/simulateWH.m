@@ -69,7 +69,7 @@ phMax = 0; % heat pump capacity, kW
 xr = xMax; % energy threshold for resistor turn-on in hybrid case, kWh
 
 % simulation
-[x1,p1] = waterHeaterControl(x0,xMax,phMax,prMax,a,w,eta,alpha,xr);
+[x1,p1] = waterHeaterControl(x0,xMax,phMax,prMax,a,w,1,alpha,xr);
 
 % plots
 plotResults(t,x1,p1,qd,xMin,xMax,phMax,prMax,xr,1)
