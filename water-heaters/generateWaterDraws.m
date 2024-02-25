@@ -13,14 +13,17 @@ function qd = generateWaterDraws(t,n)
 K = length(t) - 1; % number of time steps
 dt = t(2) - t(1); % time step duration, h
 
+% set number of showers
+nShower = n*round((t(end)-t(1))/24);
+
 % thermal power draw generation
 qd = zeros(K,1); % thermal power withdrawal, kW
-for i=1:n
+for i=1:nShower
     % generate a plausible time index for shower start
     isValid = 0; % indicator of valid water withdrawal
     while isValid == 0
         k = randi(K); % time index for shower start
-        if ((t(k) >= 5 && t(k) <= 9) || (t(k) >= 20 && t(k) <= 22)) ... % time is in morning or evening
+        if ((mod(t(k),24) >= 5 && mod(t(k),24) <= 9) || (mod(t(k),24) >= 20 && mod(t(k),24) <= 22)) ... % time is in morning or evening
                 && max(qd(k:min(K,k+ceil((10/60)/dt)))) == 0 % no one else is in shower
             isValid = 1;
         end
