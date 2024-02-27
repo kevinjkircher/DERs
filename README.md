@@ -12,4 +12,4 @@ and solar photovoltaics.
 I'm currently writing code for the course in Matlab, but will likely
 support Python and/or Julia in future semesters.
 
-This code is open source under a permissive MIT license.
+This code is open source under an MIT license.
