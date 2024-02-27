@@ -96,7 +96,7 @@ fprintf('Cost reduction from solar with one-to-one net metering: $%i (%i%%).\n',
     c1 - c2, round(100*(1 - c2/c1)))
 
 % cost with reduced net metering
-piSell = 0.03; % reduced price at which user buys electricity, $/kWh
+piSell = 0.03; % reduced price at which user sells electricity, $/kWh
 c3 = NaN; % electricity cost, $
 %%%% ^^^^ YOUR CODE HERE ^^^^ %%%%
 fprintf('Electricity cost with solar and reduced net metering: $%i.\n',c3)
