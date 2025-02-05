@@ -97,8 +97,8 @@ t_elec = t_span.map(lambda x: x.replace(year=2019))
 plug_powers = import_electricity(electricity_file, t_elec)
 
 # Exogenous thermal power
-lam = 0.25 % glazing ratio
-c = 0.4 % solar heat gain coefficient
+lam = 0.25 # glazing ratio
+c = 0.4 # solar heat gain coefficient
 qe = (plug_powers[:, np.random.randint(plug_powers.shape[1])] +  # from plugged-in devices
       4.8 * c * lam * np.sqrt(N * Af * I) +  # from the sun
       1 + (0.5 / 3) * np.random.randn(K))  # from everything else
