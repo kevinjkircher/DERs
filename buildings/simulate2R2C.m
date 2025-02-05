@@ -82,8 +82,10 @@ tElec = tSpan; tElec.Year = 2019;
 plugPowers = importElectricity(electricityFile,tElec);
 
 % exogenous thermal power
+lambda = 0.25; % glazing ratio
+c = 0.4; % solar heat gain coefficient
 qe = plugPowers(:,randi(size(plugPowers,2))) ... % from plugged-in devices
-    + 0.19*sqrt(N*Af)*I ... % from the sun
+    + 4.8*c*lambda*sqrt(N*Af*I) ... % from the sun
     + 1 + (0.5/3)*randn(K,1); % from everything else
 
 % disturbance
